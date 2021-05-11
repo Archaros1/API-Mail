@@ -3,28 +3,29 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Http\Request;
-
 
 class Mail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
+    /** @var object */
     public $data;
 
     /**
      * Create a new message instance.
      *
+     * @param array|object $data
+     *
      * @return void
      */
     public function __construct($data)
     {
-        if (is_array($data)) {
-            $data = (object)$data;
-        } 
+        if (\is_array($data)) {
+            $data = (object) $data;
+        }
         $this->data = $data;
     }
 
@@ -35,11 +36,10 @@ class Mail extends Mailable
      */
     public function build()
     {
-
         $data = $this->data;
 
         return $this->from($data->from)
                     ->subject($data->subject)
-                    ->html($data->content);
+                    ->html($data->html);
     }
 }

@@ -26,7 +26,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::middleware('api')->middleware('App\Http\Middleware\Login')->group(function() {
-    Route::post('/queue', 'JobsController@queueMail')->name('queueMail');
+    Route::any('/', 'JobsController@test');
+    Route::post('/queueMail', 'JobsController@queueMail')->name('queueMail');
+    Route::post('/queueSMS', 'JobsController@queueSMS')->name('queueSMS');
+    // Route::get('/queue', function (Request $request) {
+    //     return response()->json(["Erreur : token ou IP non-autorisés"]);
+    // });
     /**  exemple syntaxe : Route::get('/todos/{todo}', 'TodoController@show')->name('show'); **/
 
 });

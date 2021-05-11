@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+    'default' => env('QUEUE_CONNECTION_QB_API', 'database'),
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
 
     'failed' => [
         'driver' => env('QUEUE_FAILED_DRIVER', 'database'),
-        'database' => env('DB_CONNECTION', 'mysql'),
+        'database' => env('DB_CONNECTION_QB_API', 'mysql'),
         'table' => 'failed_jobs',
     ],
 

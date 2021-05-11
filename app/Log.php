@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
         'request',
+        'response',
         'ip', 'token',
         'login_result', 'sent',
     ];
-
-    public $timestamps = false;
     protected $table = 'logs';
     protected $connection = 'sqlite';
 }

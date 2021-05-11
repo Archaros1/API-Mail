@@ -21,4 +21,4 @@ Route::get('/form', function () {
     return view('form');
 })->name('form.fill');
 
-Route::post('/form', 'JobsController@queueMail')->name('form.submit');
+// Route::post('/form', 'JobsController@queueMail')->name('form.submit');

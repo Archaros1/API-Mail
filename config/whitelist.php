@@ -1,6 +1,5 @@
 <?php
 
-// the app must have a whitelisted token
 return [
     'applications' => [
         [
@@ -13,7 +12,6 @@ return [
         ],
         
     ],
-// the computer must have a whitelisted IP
     'computers' => [
         [
             'ip' => '111.111.111.111',
@@ -25,6 +23,10 @@ return [
         ],
         [
             'ip' => '::1',
+            'name' => 'localhost',
+        ],
+        [
+            'ip' => '127.0.0.1',
             'name' => 'localhost',
         ],
         

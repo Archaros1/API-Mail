@@ -17,11 +17,14 @@ class CreateLogsTable extends Migration
             $table->id();
             $table->text('request')
                   ->nullable();
+            $table->text('response')
+                  ->nullable();
             $table->string('ip');
             $table->boolean('login_result');
             $table->boolean('sent')
                   ->default(false);
             $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

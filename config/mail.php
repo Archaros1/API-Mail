@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER_QB_API', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
+            'host' => env('MAIL_HOST_QB_API', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT_QB_API', 587),
+            'encryption' => env('MAIL_ENCRYPTION_QB_API', 'tls'),
+            'username' => env('MAIL_USERNAME_QB_API'),
+            'password' => env('MAIL_PASSWORD_QB_API'),
         ],
 
         'ses' => [
